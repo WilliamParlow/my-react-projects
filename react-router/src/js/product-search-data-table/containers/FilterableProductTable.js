@@ -12,7 +12,7 @@ class FilterableProductTable extends Component {
          products: []
       };
 
-      axios.get('../../../../json/product.json')
+      axios.get('https://raw.githubusercontent.com/WilliamParlow/my-react-projects/master/react-router/json/product.json')
          .then(res =>
             this.setState({ products: res.data }))
 
