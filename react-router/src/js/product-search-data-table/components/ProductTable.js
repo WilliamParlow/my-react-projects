@@ -1,14 +1,59 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
+import ProductCategoryRow from './ProductCategoryRow';
+import ProductRow from './ProductRow';
 
 class ProductTable extends Component {
    constructor(props) {
-      super(props);      
+      super(props);
    }
 
    render() {
-      
+
+      const { filterText, isStockOnly, products } = this.props;
+      const rows = [];
+
+      let lastCategory = null;
+
+      products.forEach(product => {
+
+         if (product.name.indexOf(filterText) === -1) {
+            return;
+         }
+
+         if (isStockOnly && !product.stocked) {
+            return;
+         }
+
+         if (lastCategory !== product.category) {
+            rows.push(
+               <ProductCategoryRow
+                  category={product.category}
+                  key={product.category} />
+            );
+         }
+
+         rows.push(
+            <ProductRow
+               product={product}
+               key={product.name} />
+         );
+
+         lastCategory = product.category;
+
+      });
+
       return (
-         <div>ProductTable</div>
+         <table>
+            <thead>
+               <tr>
+                  <th>Name</th>
+                  <th>Price</th>
+               </tr>
+            </thead>
+            <tbody>
+               {rows}
+            </tbody>
+         </table>
       )
    }
 }

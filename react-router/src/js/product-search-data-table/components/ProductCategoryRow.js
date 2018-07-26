@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 
 class ProductCategoryRow extends Component {
    constructor(props) {
@@ -6,9 +6,13 @@ class ProductCategoryRow extends Component {
    }
 
    render() {
+      const { category } = this.props;
+      
       return (
-         <div>ProductCategoryRow</div>
-      )
+         <tr>
+            <th colSpan="2">{category}</th>
+         </tr>
+      );
    }
 }
 

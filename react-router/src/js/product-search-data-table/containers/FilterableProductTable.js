@@ -32,7 +32,6 @@ class FilterableProductTable extends Component {
    render() {
       const { filterText, isStockOnly, products } = this.state;
 
-
       return (
          <div>
             <SearchBar
