@@ -5,3 +5,4 @@ Contain all my tests with React.js
 
 * [react-router](https://williamparlow.github.io/my-react-projects/react-router/dist/index.html)
 * [react-simple-form](https://williamparlow.github.io/my-react-projects/react-simple-form/dist/index.html)
+* [react-tic-tac-toe](https://williamparlow.github.io/my-react-projects/react-tic-tac-toe/build/index.html)
